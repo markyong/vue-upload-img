@@ -6,20 +6,24 @@
         <router-view/>
       </keep-alive>
     </div>
+    <div class="bgCan">
+      <up-up></up-up>
+    </div>
   </div>
 </template>
 
 <script>
   import Navbar from './components/Navbar.vue'
+  import UpUp from './components/UpUp.vue'
   export default {
     name: 'app',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
       }
     },
     components: {
-      Navbar
+      Navbar,
+      UpUp
     }
   }
 </script>
@@ -32,6 +36,8 @@
   }
 
   #app {
+    position: relative;
+    height: 100%;
   }
 
   ul, li {
@@ -41,5 +47,11 @@
   .container {
     /*background: #fff;*/
     margin-top: 37px;
+  }
+  .bgCan{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -7;
   }
 </style>
