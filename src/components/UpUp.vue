@@ -38,15 +38,15 @@
           x:Math.random()*this.x,
           y:Math.random()*100+this.y,
           alpha:Math.random()*0.7,
-          radius:Math.random()*3,
+          radius:Math.random()*3.4,
           speed:Math.random()
         }
       },
       drawCircle(){
         this.ctx.clearRect(0,0,this.x,this.y);
         this.cirList.forEach((item,index)=>{
-          if(item.alpha < 0) {
-            this.cirList.splice(index,1,this.createCircle())
+          if(item.alpha <= 0) {
+            this.cirList[index] = this.createCircle();
           }
           item.alpha -= 0.001;
           this.ctx.beginPath();

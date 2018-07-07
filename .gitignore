@@ -6,7 +6,6 @@ yarn-error.log
 .git
 .idea
 # Editor directories and files
-.idea
 *.suo
 *.ntvs*
 *.njsproj
