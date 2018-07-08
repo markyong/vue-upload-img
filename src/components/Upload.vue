@@ -74,12 +74,14 @@
     margin-bottom: 7px;
     padding: 25px;
     border-radius: 3px;
+    width:100%;
   }
   .showImg:hover{
     border: 1px dashed #0D98FF;
   }
   .showImg img{
-    height: 247px;
+    max-height: 247px;
+    max-width: 100%;
     box-shadow: 2px 2px 10px #000;
   }
   .showImg .initText{
