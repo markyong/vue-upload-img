@@ -10,7 +10,7 @@
         ctx:null,
         x:0,
         y:0,
-        num:777,
+        num:0,
         cirList:[]
       }
     },
@@ -28,6 +28,7 @@
         this.can = document.getElementById('upa');
         this.x = this.can.width = document.body.clientWidth;
         this.y = this.can.height = document.body.clientHeight;
+        this.num = Math.floor(this.x * ((Math.random() * 0.3) + 0.4));
         this.ctx = this.can.getContext('2d');
         for(let i = 0; i < this.num; i++){
           this.cirList.push(this.createCircle());
