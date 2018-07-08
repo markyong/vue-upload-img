@@ -110,7 +110,6 @@
   .upLoad button{
     width: 97px;
     height: 47px;
-    background: #909399;
     background: #0D98FF;
     border: 0 none;
     outline-style: none;
@@ -131,7 +130,30 @@
   .upLoad .imgName{
     height: 47px;
     line-height: 47px;
-    padding-left: 10px;
+    padding: 0 10px;
     color: #3c3c3c;
+    overflow: hidden;
+  }
+  @media (max-width: 768px) {
+    .uploadContainer{
+      margin-bottom: 47px;
+    }
+    .showImg {
+      height: 177px;
+      padding: 17px;
+    }
+    .showImg img{
+      max-height: 140px;
+    }
+    .showImg .initText{
+      font-size: 17px;
+      line-height: 143px;
+    }
+    .upLoad .btn{
+      top: 46px;
+    }
+    .upLoad .btn button{
+      width: 77px;
+    }
   }
 </style>

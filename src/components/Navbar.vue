@@ -45,6 +45,7 @@
     width: 100%;
     height: 47px;
     background: rgba(0,0,0,0.4);
+
   }
   nav button {
     border: 0 none;
@@ -69,6 +70,7 @@
     padding-left: 177px;
     font-size: 15px;
     display: block !important;
+    z-index: 77777;
   }
   nav ul li {
     height: 47px;
@@ -97,6 +99,7 @@
       display: none !important;
       width: 100%;
       margin: 0 auto;
+      position: relative;
     }
     nav ul li{
       width: 77%;
