@@ -54,7 +54,7 @@
         this.showInit = true;
       },
       uploadImg(){
-        axios.post('http://localhost:3000/uploadImg',{img:this.imgList[0].src}).then((response) => {
+        axios.post('http://localhost:3000/uploadImg',{src:this.imgList[0].src,name:this.imgList[0].name}).then((response) => {
           alert('上传成功');
           this.$root.Bus.$emit('sendUrl',response.data);
         }).catch((err) => {

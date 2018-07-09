@@ -35,7 +35,6 @@
       showNav(){
         this.navToggle = !this.navToggle;
         this.isNavActive = !this.isNavActive;
-        console.log(this.navToggle);
       }
     }
   }
