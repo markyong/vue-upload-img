@@ -58,6 +58,7 @@
           this.$root.Bus.$emit('message',{type:'success',text:'上传成功'});
           this.$root.Bus.$emit('sendUrl',response.data);
         }).catch((err) => {
+          this.$root.Bus.$emit('message',{type:'warning',text:'服务器信息错误'});
           console.log(err);
         });
       }

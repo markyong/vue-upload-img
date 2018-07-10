@@ -25,7 +25,7 @@
         this.messageShow = true;
         setTimeout(()=>{
           this.messageShow = false;
-        },1700);
+        },2700);
       }
     }
   }
@@ -37,30 +37,29 @@
     background: red;
     line-height: 40px;
     text-align: center;
+    font-size: 14px;
     border-radius: 4px;
     position: absolute;
     top:27px;
     left: 50%;
+    z-index: 777;
     margin-left: -135px;
   }
-  .message-enter-active{
+  .message-enter-active,.message-leave-active{
     transition: all 0.7s ease;
-  }
-  .message-leave-active{
-    transition: all .7s ease;
   }
   .message-enter,.message-leave-to{
     transform: translateY(-47px);
     opacity: 0;
   }
   .success{
-    background: #F0F9EA;
-    color:#38C546;
-    border:1px solid #DFF4D6;
+    background: #f0f9eb;
+    color: #67c23a;
+    border:1px solid #e1f3d8;
   }
   .warning{
-    background: #FFF6EA;
-    color: #F59D37;
-    border:1px solid #FEECD5;
+    background: #fdf6ec;
+    color: #e6a23c;
+    border:1px solid #faecd8;
   }
 </style>
