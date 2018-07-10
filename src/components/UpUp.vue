@@ -19,15 +19,15 @@
       this.init();
       this.drawCircle();
       window.onresize = function(){
-        self.x = self.can.width = document.body.offsetWidth;
-        self.y = self.can.height = document.body.offsetHeight;
+        self.x = self.can.width = document.body.clientWidth;
+        self.y = self.can.height = document.body.scrollHeight;
       }
     },
     methods:{
       init(){
         this.can = document.getElementById('upa');
         this.x = this.can.width = document.body.clientWidth;
-        this.y = this.can.height = document.body.clientHeight;
+        this.y = this.can.height = document.body.scrollHeight;
         this.num = Math.floor(this.x * ((Math.random() * 0.3) + 0.4));
         this.ctx = this.can.getContext('2d');
         for(let i = 0; i < this.num; i++){
