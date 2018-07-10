@@ -9,12 +9,14 @@
     <div class="bgCan">
       <up-up></up-up>
     </div>
+    <message></message>
   </div>
 </template>
 
 <script>
   import Navbar from './components/Navbar.vue'
   import UpUp from './components/UpUp.vue'
+  import Message from './components/Message.vue'
   export default {
     name: 'app',
     data () {
@@ -23,7 +25,8 @@
     },
     components: {
       Navbar,
-      UpUp
+      UpUp,
+      Message
     }
   }
 </script>

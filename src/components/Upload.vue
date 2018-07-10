@@ -37,7 +37,7 @@
         if(!e.target.files[0]) return;
         self.imgList.pop();
         if(e.target.files[0].type.indexOf('image') === -1){
-          alert('请上传图片');
+          this.$root.Bus.$emit('message',{type:'warning',text:'请上传图片'});
           return;
         }
         let file = e.target.files[0];
@@ -55,7 +55,7 @@
       },
       uploadImg(){
         axios.post('http://localhost:3000/uploadImg',{src:this.imgList[0].src,name:this.imgList[0].name}).then((response) => {
-          alert('上传成功');
+          this.$root.Bus.$emit('message',{type:'success',text:'上传成功'});
           this.$root.Bus.$emit('sendUrl',response.data);
         }).catch((err) => {
           console.log(err);
