@@ -1,7 +1,9 @@
 <template>
   <div class="uploadContainer">
-    <div class="showImg">
-      <span class="initText" v-if="showInit">请选择要上传的图片</span>
+    <div class="showImg" @drop="imgOnDrop($event)"
+         @dragover="imgOnDrogOver($event)"
+         >
+      <span class="initText" v-if="showInit">请选择要上传的图片或拖到这里</span>
       <img :src="item.src" alt="" v-for="(item,index) in imgList" :key="index" >
     </div>
     <div class="upLoad">
@@ -33,14 +35,17 @@
         document.getElementById('upLoadImg').click();
       },
       loadImg(e){
-        const self = this;
         if(!e.target.files[0]) return;
-        self.imgList.pop();
-        if(e.target.files[0].type.indexOf('image') === -1){
+        this.readImg(e.target.files[0]);
+      },
+      readImg(img){
+        const self = this;
+        if(img.type.indexOf('image') === -1){
           this.$root.Bus.$emit('message',{type:'warning',text:'请上传图片'});
           return;
         }
-        let file = e.target.files[0];
+        self.imgList.pop();
+        let file = img;
         let reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = function () {
@@ -61,6 +66,15 @@
           this.$root.Bus.$emit('message',{type:'warning',text:'服务器信息错误'});
           console.log(err);
         });
+      },
+      imgOnDrop(e){
+        e.stopPropagation();
+        e.preventDefault();
+        this.readImg(e.dataTransfer.files[0]);
+      },
+      imgOnDrogOver(e){
+        e.stopPropagation();
+        e.preventDefault();
       }
     }
   }
